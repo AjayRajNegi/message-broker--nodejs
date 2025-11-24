@@ -32,6 +32,11 @@ app.post("/users", async (req, res) => {
   }
 });
 
+app.get("/users", async (req, res) => {
+  const users = await User.find();
+  res.json(users);
+});
+
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
